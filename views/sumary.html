@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Midterm</title>
+</head>
+<body>
+<h1>Midterm Survey</h1>
+<h3>Thank you for taking the survey, {{ @SESSION.userName }}</h3><br>
+<p>Your Answers:</p>
+<ul>
+    <repeat group="{{ @SESSION.userMidterms}}" value="{{ @midterm }}">
+        <li>{{ @midterm }}</li>
+    </repeat>
+</ul>
+
+</body>
+</html>

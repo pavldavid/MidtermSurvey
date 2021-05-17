@@ -57,7 +57,7 @@ $f3->route('GET|POST /survey' , function($f3){
         //If there are no errors redirect to summary route
         if (empty($f3->get('errors')))
         {
-            header('location: summary');
+            header('location: sumary');
         }
     }
 
@@ -68,6 +68,13 @@ $f3->route('GET|POST /survey' , function($f3){
 
     $view = new Template();
     echo $view->render('views/survey.html');
+});
+
+$f3->route('GET /sumary', function(){
+
+    //Display the summary page
+    $view = new Template();
+    echo $view->render('views/sumary.html');
 });
 
 //Run Fat-Free
