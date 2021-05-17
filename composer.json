@@ -1,0 +1,12 @@
+{
+  "name": "dpavlenko/328/DatingOnline",
+  "authors": [
+    {
+      "name": "David Pavlenko",
+      "email": "dpavlenko@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
