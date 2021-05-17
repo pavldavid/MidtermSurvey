@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Midterm Survey</h1>
+    <form action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="{{ @userName }}">
+
+        <check if="{{ isset(@errors['name']) }}">
+            <span class="err">{{ @errors['name'] }}</span>
+        </check><br>
+
+        <label>Check all that apply:</label><br>
+        <repeat group="{{ @midterms }}" value="{{ @midterm }}">
+            <label><input type="checkbox"
+                          name="midterms[]"
+                          value="{{ @midterm }}"
+                <check if="{{ in_array(@midterm, @userMidterms) }}">
+                    checked = "checked"
+                </check>
+                > {{ @midterm }} </label><br>
+
+            </label>
+        </repeat>
+
+        <check if="{{ isset(@errors['midterms']) }}">
+            <span class="err">{{ @errors['midterms'] }}</span>
+        </check>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
